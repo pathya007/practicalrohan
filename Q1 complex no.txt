@@ -1,0 +1,93 @@
+# include<iostream>
+using namespace std;
+class Complex                       //decaring Class Complex
+ {
+ public:
+     float real,img;
+     complex(){}
+     complex operator+(complex);
+     complex operator*(complex);
+     friend ostream&operator<<(ofstream&,complex&);
+     friend instream&operator>>(istream&,complex&);
+ };
+ complex complex::operator+(complex obj)
+ {
+
+     complex temp;
+     temp.real=real+obj.real;
+     temp.img=img+obj.img;
+     return(temp);
+ }
+ istream &operator>(istream &is,complex&obj)
+ {
+     is>>obj.real;
+     is>>obj.img;
+     return is;
+ }
+ ostream &operator<(ostream &out,complex&obj)
+ {
+
+     out<<" "<obj.real;
+     out<<"+"<obj.img<<"i";
+     return out;
+ }
+ complex complex::operator*(complex obj)
+ {
+
+     complex temp;
+     temp.real=real*obj.real.img*obj.img;
+     temp.img=img*obj.real+real*real*obj.img;
+     return(temp);
+ }
+ int main()
+ {
+
+     complex a,b.c,d;
+     cout<<"\n The first complex number is: ";
+     cout<<"\n Enter the real and img : ";
+     cin>>a;
+     cout<<"\n The second complex number is: ";
+     cout<<"\n Enter the real and img : ";
+     cin>>b;
+     cout<<"\n Arithmetic operation";
+     c=a+b;
+     cout<<"\n ADDITION= ";
+     cin>>c;
+     cout<<"\n MULTIPLICATION ";
+     cin>>d;
+     cout<<endl;
+     return 0;
+
+ }
+
+
+
+ -----------------------------------------------------output------------------------------------------
+ Enter Real and Imaginary part of the Complex Number 1 :
+1 2
+Enter Real and Imaginary part of the Complex Number 2 :
+1 2
+Complex Number 1 : 1 + 2i
+
+Complex Number 2 : 1 + 2i
+
+**********MENU**********
+1. Addition of Complex Numbers
+2. Multiplication of Complex Numbers
+3. Exit
+Enter your choice from above MENU (1 to 3) : 1 2
+Addition : 2 + 4i
+
+Do you wan to perform another operation (y/n) :
+Thanks for using this program!!
+
+Process returned 0 (0x0)   execution time : 46.421 s
+Press any key to continue.
+
+
+
+
+
+
+
+
